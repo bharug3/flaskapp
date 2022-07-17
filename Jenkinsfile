@@ -6,7 +6,7 @@ pipeline{
     stages{
         stage("deploy"){
             steps{
-                sh 'ls -ltrh'
+                sh "ls -ltrh"
             }
         }
     }
