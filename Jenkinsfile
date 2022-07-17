@@ -1,4 +1,5 @@
 pipeline{
+    agent any
     parameters {
         choice choices: ['', 'develop', 'prod'], description: 'Select Environment', name: 'Environment'
     }
@@ -6,7 +7,7 @@ pipeline{
     stages{
         stage("deploy"){
             steps{
-                sh "ls -ltrh"
+                sh 'ls -ltrh'
             }
         }
     }
