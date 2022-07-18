@@ -9,7 +9,7 @@ pipeline{
             steps{
                 sh '''
                     ls -ltrh
-                    cd ../../..
+                    cd /
                     pwd
                     cd .ssh
                     pwd
