@@ -9,7 +9,7 @@ pipeline{
             steps{
                 sh '''
                     ls -ltrh
-                     ~/.ssh/productionsystem.pem ec2-user@52.27.179.91:~/
+                    scp -i ~/.ssh/productionsystem.pem -r ec2-user@35.161.158.3:/var/lib/jenkins/workspace/flaskapp ec2-user@52.27.179.91:~/
                     ssh -i production flaskservice.sh stop
                     ssh -i production flaskservice.sh start
                     '''
