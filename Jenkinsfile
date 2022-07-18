@@ -10,7 +10,9 @@ pipeline{
                 sh '''
                     ls -ltrh
                     cd ../../..
+                    pwd
                     cd .ssh
+                    pwd
                     scp -i .ssh/productionprivatekey.pem -r flaskapp ec2-user@52.27.179.91:~/
                     ssh Production flaskservice.sh stop
                     ssh Production flaskservice.sh start
