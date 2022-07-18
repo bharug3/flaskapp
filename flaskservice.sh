@@ -22,7 +22,7 @@ startfunction(){
         nohup python app.py > flaskservice.log 2>&1 &
         echo "$!" > filepid
         echo "PID: $!"
-        tail -f flaskservice.log
+        # tail -f flaskservice.log
     fi
 }
 
