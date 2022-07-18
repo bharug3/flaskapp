@@ -9,7 +9,6 @@ pipeline{
             steps{
                 sh '''
                     ls -ltrh
-                    cd /
                     pwd
                     scp -i ~/workspace/flaskapp/productionprivatekey.pem -r flaskapp ec2-user@52.27.179.91:~/
                     ssh Production flaskservice.sh stop
