@@ -5,4 +5,4 @@ def func(): #writing a function to be executed
        return 'Hi Gunda Syam Prasad, Gunda Srilatha, Sriteja and Vinay Bava, this is bhargav gunda, hello everyone'
 if __name__=='__main__': #calling  main 
        # app.debug=True #setting the debugging option for the application instance
-       app.run(host='0.0.0.0', port=80) #launching the flask's integrated development webserver
+       app.run(host='0.0.0.0') #launching the flask's integrated development webserver
