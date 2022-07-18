@@ -17,7 +17,7 @@ pipeline{
     //                 '''
     //         }
     //     }
-        stage('Deploying to Test') {
+        stage('Deploying to development') {
 		    when {
             expression {
             return params.ENVIRONMENT == 'development'
@@ -37,5 +37,4 @@ pipeline{
                     echo 'Deploying to production....'
                     }  
     }
-}
 }
