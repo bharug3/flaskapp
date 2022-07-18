@@ -1,5 +1,6 @@
 #!/bin/bash
 
+yum install pip -y 
 pip install flask 
 
 filepid=filepid
