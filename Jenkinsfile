@@ -8,6 +8,8 @@ pipeline{
         stage("deploy"){
             steps{
                 sh '''
+                    whoami
+                    env
                     ls -ltrh
                     pwd
                     scp  -i /home/ec2-user/.ssh/productionprivatekey.pem -o StrictHostKeyChecking=no -r flaskapp ec2-user@52.27.179.91:~/
