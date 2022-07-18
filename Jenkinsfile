@@ -1,8 +1,18 @@
 pipeline{
     agent any
     
-
         stages{
+		
+	    stage('Deploying to main') {
+		        when {
+                expression {
+                env.BRANCH_NAME == 'main'
+                    }
+                }
+                    steps {
+                        echo 'Deploying to production....'
+                    }  
+    }
             stage('Deploying to development') {
 		        when {
                 expression {
@@ -16,7 +26,7 @@ pipeline{
             stage('Deploying to production') {
 		        when {
                 expression {
-                env.BRANCH_NAME == 'master' || env.BRANCH_NAME == 'main'
+                env.BRANCH_NAME == 'production'
                     }
                 }
                     steps {
