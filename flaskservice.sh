@@ -1,5 +1,7 @@
 #!/bin/bash
 
+pip install flask 
+
 filepid=filepid
 Running=N
 
