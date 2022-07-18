@@ -9,9 +9,9 @@ pipeline{
             steps{
                 sh '''
                     ls -ltrh
-                    scp  -i  /home/ec2-user/.ssh/productionsystem.pem -r flaskapp  ec2-user@52.27.179.91:~/
-                    ssh production flaskservice.sh stop
-                    ssh production flaskservice.sh start
+                    scp -i ~/.ssh/productionprivatekey.pem -r flaskapp ec2-user@52.27.179.91:~/
+                    ssh Production flaskservice.sh stop
+                    ssh Production flaskservice.sh start
                     '''
             }
         }
