@@ -19,7 +19,7 @@ startfunction(){
 
     else 
         echo "Starting service"
-        nohup python /mnt/c/Users/bharg/Dropbox/PC/Desktop/devops/flaskapp/app.py > /mnt/c/Users/bharg/Dropbox/PC/Desktop/devops/flaskapp/flaskservice.log 2>&1 &
+        nohup python app.py > flaskservice.log 2>&1 &
         echo "$!" > filepid
         echo "PID: $!"
         tail -f flaskservice.log
