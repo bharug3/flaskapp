@@ -1,9 +1,10 @@
 ---
-- hosts: "{{ host_name }}"
+- host: "{{ host_name }}"
   become: yes
   vars_files:
     - vars/main.yml
   tasks:
-    - name: installing python
+    - name: installing flask
       yum:
-        name:
+        name: flask
+        state: latest
