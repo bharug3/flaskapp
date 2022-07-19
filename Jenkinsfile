@@ -20,7 +20,7 @@ pipeline{
             }
             steps{
                 echo 'Deploying to development....'
-                 ansible -i ec2.py -m ping tag_Name_development --private-key ~/.ssh/development.pem
+                 sh 'ansible -i ~/ec2.py -m ping tag_Name_development --private-key ~/.ssh/development.pem'
             }  
         }
         stage('Deploying to production'){
