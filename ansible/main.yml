@@ -1,0 +1,7 @@
+---
+- hosts: "{{ host_name }}"
+  become: yes
+  gather_facts: false
+  var_files: ~/ec2.py
+  tasks:
+  - yum: name=flask state=latest
