@@ -26,7 +26,7 @@ pipeline{
                 sshagent(['ec2_ssh_usage'])
                    
                     {
-                     sh 'ansible -i ec2.py -m ping tag_Name_development 
+                     sh 'ansible -i ~/ec2.py -m ping tag_Name_development 
                     }
             }  
         }
