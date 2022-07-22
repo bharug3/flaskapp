@@ -26,7 +26,7 @@ pipeline{
                 withCredentials([sshUserPrivateKey(credentialsId: 'ec2_ssh_usage', keyFileVariable: 'ec2')])
                     {
                     sh 'chmod +x ec2.py'   
-                    sh 'ANSIBLE_HOST_KEY_CHECKING=False ansible -i ec2.py -m ping tag_Name_development' --private-key ec2'
+                    sh 'ANSIBLE_HOST_KEY_CHECKING=False ansible -i ec2.py -m ping tag_Name_development' --private-key: "ec2"'
                     }
             }  
         }
