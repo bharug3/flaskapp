@@ -27,7 +27,7 @@ pipeline{
                    
                     {
                      sh 'chmod +x ec2.py'   
-                     sh 'ansible -i ec2.py -o StrictHostKeyChecking=no -m ping tag_Name_development' 
+                     sh 'ansible -i ec2.py -o HostKeyChecking=no -m ping tag_Name_development' 
                     }
             }  
         }
