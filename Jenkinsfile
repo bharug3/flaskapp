@@ -9,9 +9,12 @@ pipeline{
             }
             steps{
                 echo 'Deploying to main....'
-                 sh 'ansible -i ec2.py -m ping tag_Name_development --private-key ~/.ssh/development.pem'
-            }  
-        }
+                 sshagent(['ec2_ssh_usage']) 
+                    {
+                    sh 'ansible -i ec2.py -m ping tag_Name_development 
+                    }
+                }  
+            }
         stage('Deploying to development'){
             when{
                 expression {
@@ -20,7 +23,11 @@ pipeline{
             }
             steps{
                 echo 'Deploying to development....'
-                 sh 'ansible -i ec2.py -m ping tag_Name_development --private-key ~/.ssh/development.pem'
+                sshagent(['ec2_ssh_usage'])
+                   
+                    {
+                     sh 'ansible -i ec2.py -m ping tag_Name_development 
+                    }
             }  
         }
         stage('Deploying to production'){
@@ -31,7 +38,11 @@ pipeline{
             }
             steps {
                 echo 'Deploying to production....'
-                sh 'ansible -i ec2.py -m ping tag_Name_production --private-key ~/.ssh/production.pem'
+                sshagent(['ec2_ssh_usage']) 
+                    {
+                    sh 'ansible -i ec2.py -m ping tag_Name_development
+                    }
+                
             }  
         }
     }
