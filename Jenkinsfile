@@ -26,6 +26,7 @@ pipeline{
                 sshagent(['ec2_ssh_usage'])
                    
                     {
+                     sh 'chmod +x ec2.py'   
                      sh 'ansible -i ec2.py -m ping tag_Name_development' 
                     }
             }  
