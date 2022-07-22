@@ -23,11 +23,10 @@ pipeline{
             }
             steps{
                 echo 'Deploying to development....'
-                sshagent(['ec2_ssh_usage'])
-                   
+                withCredentials([sshUserPrivateKey(credentialsId: 'ec2_ssh_usage', keyFileVariable: 'ec2')])
                     {
-                     sh 'chmod +x ec2.py'   
-                     sh 'ANSIBLE_HOST_KEY_CHECKING=False ansible -i ec2.py -m ping tag_Name_development' 
+                    sh 'chmod +x ec2.py'   
+                    sh 'ANSIBLE_HOST_KEY_CHECKING=False ansible -i ec2.py -m ping tag_Name_development' --private-key: "ec2"
                     }
             }  
         }
