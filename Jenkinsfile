@@ -27,7 +27,7 @@ pipeline{
                    
                     {
                      sh 'chmod +x ec2.py'   
-                     sh 'ansible -i ec2.py -m ping tag_Name_development' 
+                     sh 'ANSIBLE_HOST_KEY_CHECKING=False ansible -i ec2.py -m ping tag_Name_development' 
                     }
             }  
         }
