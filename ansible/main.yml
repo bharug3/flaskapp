@@ -6,6 +6,4 @@
   become: yes
   gather_facts: false
   tasks:
-  - yum: name=flask state=latest
-  - shell: cd /
-  - copy: src=/var/lib/jenkins/workspace/flaskapp/* dest=/home/ec2-user
+  - shell: date
