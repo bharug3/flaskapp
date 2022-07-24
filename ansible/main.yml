@@ -4,6 +4,6 @@
     ansible_host_key_checking: false
     ansible_ssh_host_key_checking: false
   become: yes
-  gather_facts: false
+  gather_facts: yes
   tasks:
   - shell: date
