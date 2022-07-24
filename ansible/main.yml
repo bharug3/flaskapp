@@ -4,3 +4,6 @@
   gather_facts: yes
   tasks:
   - shell: date
+  - yum: name=flask state=latest
+  - shell: cd /
+  - copy: src=/var/lib/jenkins/workspace/practice_development/* dest=/home/ec2-user
