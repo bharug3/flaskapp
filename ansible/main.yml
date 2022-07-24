@@ -1,8 +1,7 @@
 ---
-- hosts: all
+- hosts: tag_Name_development
   become: yes
   gather_facts: false
-  host_vars: ~/ec.py
   tasks:
   - yum: name=flask state=latest
   - shell: cd /
