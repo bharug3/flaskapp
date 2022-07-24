@@ -1,5 +1,7 @@
 ---
 - hosts: tag_Name_development
+  vars:
+    ansible_host_key_checking: false
   become: yes
   gather_facts: false
   tasks:
