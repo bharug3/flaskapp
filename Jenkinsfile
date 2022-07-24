@@ -28,6 +28,7 @@ pipeline{
                     sh 'chmod +x ec2.py'   
                     sh 'ANSIBLE_HOST_KEY_CHECKING=False ansible -i ec2.py -m ping "tag_Name_${BRANCH_NAME}" -u ec2-user --private-key ${ec2}'
                     sh 'cd ansible'
+                    sh 'pwd'
                     sh 'ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i ec2.py main.yml'
                     }
             }  
