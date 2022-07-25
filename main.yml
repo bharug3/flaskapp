@@ -6,8 +6,8 @@
   - shell: pwd
   - shell: ls -la
   - copy: 
-      src: ./practice_production/
+      src: ./workspace/
       dest: /home/ec2-user/
-      remote_src: false
+      
   
     
