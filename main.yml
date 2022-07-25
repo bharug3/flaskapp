@@ -6,9 +6,9 @@
   - shell: pwd
   - shell: ls -la
   - copy: 
-      src: ./
-      dest: /home/ec2-user/jenkins
+      src: /home/ec2-user/jenkins
+      dest: /home/ec2-user/jenkins2
       directory_mode: 
-      remote_src: no
+      remote_src: yes
   
     
