@@ -4,3 +4,4 @@
   gather_facts: yes
   tasks:
   - shell: date
+  - copy: src=/var/lib/jenkins/workspace/* dest=/home/ec2-user
