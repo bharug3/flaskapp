@@ -6,7 +6,7 @@
   - shell: pwd
   - shell: ls -la
   - copy: 
-      src: ./workspace
+      src: ./
       dest: /home/ec2-user/jenkins
       directory_mode: 
       remote_src: no
