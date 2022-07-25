@@ -8,6 +8,6 @@
   - copy: 
       src: ./practice_production/
       dest: /home/ec2-user/
-      remote_src: no
+      remote_src: false
   
     
