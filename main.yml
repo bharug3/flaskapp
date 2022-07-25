@@ -6,8 +6,8 @@
   - shell: pwd
   - shell: ls -la
   - copy: 
-      src: ./workspace
-      dest: /home/ec2-user/workspace
+      src: ./workspace/practice_production
+      dest: /home/ec2-user
       directory_mode:
       owner: ec2-user
       group: ec2-user        
