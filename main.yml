@@ -8,6 +8,7 @@
   - copy: 
       src: ./workspace/
       dest: /home/ec2-user/
+      directory_mode: 
       remote_src: no
   
     
