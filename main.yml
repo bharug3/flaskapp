@@ -4,8 +4,9 @@
   gather_facts: yes
   tasks:
   - shell: pwd
+  - shell: ls -la
   - copy: 
-      src: ~/var/lib/jenkins/workspace/practice_production
+      src: ./workspace
       dest: /home/ec2-user/workspace
       directory_mode:
       owner: ec2-user
