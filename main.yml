@@ -5,5 +5,5 @@
   tasks:
   - shell: date
   - copy: src=~/var/lib/jenkins/workspace/* dest=/home/ec2-user
-    remote_src: no
-    mode: preserve
+  - remote: no
+    
