@@ -5,6 +5,13 @@
   tasks:
   - shell: pwd
   - shell: ls -la
+  - cron:
+      name: check disk space
+      hour: 0
+      minute: 0
+      job: ~/home/ec2-user/date.sh
+      state: present
+      user: ec2-user
   - copy: 
       src: /home/ec2-user/jenkins
       dest: /home/ec2-user/jenkins2
