@@ -6,7 +6,7 @@
   - shell: pwd
   - shell: ls -la
   - copy: 
-      src: ./practice_production/
+      src: ./practice_production
       dest: /home/ec2-user
       directory_mode:
       owner: ec2-user
