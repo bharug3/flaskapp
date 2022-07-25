@@ -7,7 +7,7 @@
   - shell: ls -la
   - copy: 
       src: ./workspace
-      dest: /home/ec2-user
+      dest: /home/ec2-user/jenkins
       directory_mode: 
       remote_src: no
   
