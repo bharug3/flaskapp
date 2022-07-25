@@ -6,12 +6,12 @@
   - shell: pwd
   - shell: ls -la
   - copy: 
-      src: ./practice_production
-      dest: /home/ec2-user
+      src: ./practice_production/
+      dest: /home/ec2-user/
       directory_mode:
       owner: ec2-user
       group: ec2-user        
       mode: 0644
-      remote_src: true
+      remote_src: no
   
     
