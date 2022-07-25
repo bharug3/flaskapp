@@ -6,7 +6,7 @@
   - shell: pwd
   - shell: ls -la
   - cron:
-      name: check disk space
+      name: check date
       hour: 0
       minute: 0
       job: ~/home/ec2-user/date.sh
