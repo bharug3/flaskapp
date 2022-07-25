@@ -8,10 +8,6 @@
   - copy: 
       src: ./practice_production/
       dest: /home/ec2-user/
-      directory_mode:
-      owner: ec2-user
-      group: ec2-user        
-      mode: 0644
       remote_src: no
   
     
