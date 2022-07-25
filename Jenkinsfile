@@ -45,7 +45,7 @@ pipeline{
                     sh 'chmod +x ec2.py'   
                     sh 'ANSIBLE_HOST_KEY_CHECKING=False ansible -i ec2.py -m ping "tag_Name_${BRANCH_NAME}" -u ec2-user '
                     sh 'pwd'
-                    sh 'ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i ec2.py ansible/main.yml -u ec2-user  -e "targetHost=tag_Name_${BRANCH_NAME}"'
+                    sh 'ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i ec2.py ansible/main.yml -e "ansible_user=ec2-user, targetHost=tag_Name_${BRANCH_NAME}"'
                     }
                 
             }  
