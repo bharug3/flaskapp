@@ -41,20 +41,12 @@ pipeline{
             steps {
                 echo 'Deploying to production....'
 
-                withCredentials([sshUserPrivateKey(credentialsId: 'ec2_ssh_production', keyFileVariable: 'ec2')])
-                    {
-                    sh 'chmod +x ec2.py'   
-                    sh 'ANSIBLE_HOST_KEY_CHECKING=False ansible -i ec2.py -m ping "tag_Name_${BRANCH_NAME}" -u ec2-user --private-key ${ec2}'
-                    sh 'pwd'
-                    sh 'ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i ec2.py main.yml -u ec2-user --private-key=${ec2} -e "targetHost=tag_Name_${BRANCH_NAME}"'
-                    }
-
                 sshagent(['ec2_ssh_production']) 
                     {
                     sh 'chmod +x ec2.py'   
                     sh 'ANSIBLE_HOST_KEY_CHECKING=False ansible -i ec2.py -m ping "tag_Name_${BRANCH_NAME}"  -u ec2-user -e "ansible_ssh_user=ec2-user"'
                     sh 'pwd'
-                    sh 'ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i ec2.py main.yml -u ec2-user -e "targetHost=tag_Name_${BRANCH_NAME}"  -vvvv'
+                    sh 'ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i ec2.py main.yml -u ec2-user -e "targetHost=tag_Name_${BRANCH_NAME}" '
                     }
                 
             }  
